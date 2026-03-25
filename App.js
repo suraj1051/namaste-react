@@ -1,13 +1,6 @@
-// const heading = React.createElement('h1', {id: 'heading', xyz: 'abc'}, 'Hello World from React!');
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-/**
- * <div id="parent" xyz="abc">
- *  <div id="child">
- *  <h1> first heading </h1>
- *  <h2> second heading </h2> 
- * </div>
- * </div>
- */
 const parent = React.createElement('div', { id: 'parent', xyz: 'abc' },
     React.createElement('div', { id: 'child' }, [
         React.createElement('h1', null, 'first heading'), 
