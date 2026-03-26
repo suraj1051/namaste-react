@@ -38,9 +38,16 @@
 - Minification
 - Bunduling
 - Compress file - remove whitespaces
--  
+- Consistent Hashing - Read about it
+- Code spliting
+- Differential Bundling - support older browsers
+- Error Handling
 
 # why react App Is Fast - Question
+# what main tag ["main": "App.js"] inside package.json
+# What is dist folder
+
+
 
 
 

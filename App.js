@@ -1,19 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const parent = React.createElement('div', { id: 'parent', xyz: 'abc' },
-    React.createElement('div', { id: 'child' }, [
-        React.createElement('h1', null, 'first heading'), 
-        React.createElement('h2', null, 'second heading')
-    ]),
-    React.createElement('div', { id: 'child1' }, [
-        React.createElement('h1', null, 'first heading'), 
-        React.createElement('h2', null, 'second heading')
-    ])
+// React.createElement => Object => React Element => HTML Element
+
+const heading = React.createElement(
+  'h1',
+  { id: 'heading' },
+  'Hello World from React'
 );
 
-// console.log(heading); //heading is a React element, which is a JavaScript object
-console.log(parent);
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// How do you create h1 tag using JSX?
+const jsxHeading = <h1 className="head">Hello World from React heading</h1>;
 
-root.render(parent);
+const Title = () => (
+  <>
+  {jsxHeading}
+  <h1 className="head">Hello World Title ss</h1>
+  </>
+);
+const HeadingComponent = () => {
+  return <div id="container">
+    {Title()}
+    <Title />
+    <Title></Title>
+    <h1 className="head">Hello World from React Functional Components </h1>
+  </div>;
+  <h1 className="head">Hello World from React Functional Components </h1>;
+} 
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<HeadingComponent />);
+

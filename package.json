@@ -17,8 +17,9 @@
   "license": "ISC",
   "author": "Suraj Gholap",
   "type": "commonjs",
-  "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "devDependencies": {
