@@ -20,6 +20,23 @@
 # What is Component composition 
 - Composite two component inside one composition.
 
+# JSX sanitise the data.
+- Its prevent cross-site scripting attack.
 
+# prompts are just argument to the function
+- prompts are just argument of the function
+- Passing dynamic data to Component
+- common js -> const { resName, rating, price } = props;
 
-
+# Each child in a list should have a unique "key" prop.
+- Its a missing property 
+-   {
+        restaurantList.data.cards[0].card.card.gridElements.infoWithStyle.restaurants.map((restaurant) => {
+                return <RestaurantCard restData={restaurant} key={restaurant.info.id} />
+            })
+    }
+# why we need "key" prop ?
+- Its used to optimise render cycle to React.    
+- its represnting card uniquely. video - 2.0.0.
+- React official documnet didn't recommded that dont use index as key prop.
+- 
