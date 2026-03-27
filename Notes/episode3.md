@@ -40,3 +40,15 @@
 - its represnting card uniquely. video - 2.0.0.
 - React official documnet didn't recommded that dont use index as key prop.
 - 
+
+# EPISODE - 5
+
+- different types of import/export
+- default Export/Import - import restaurantList from "../utils/mockData";
+- named Export/Import - import { LOGO_URL } from "../utils/constants";
+
+- Can you do default export with named export ?
+
+# Read about Reconsilation on below link
+
+https://github.com/acdlite/react-fiber-architecture

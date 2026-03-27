@@ -1,55 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
-/**
- * header
- *  - logo
- *  - nav items
- * body
- *  - searchbar
- *  - Restaurant Container
- *      - Restaurant Card
- *          - image
- *          - name
- *          - rating
- *          - price 
- * footer
- *  - links
- *  - Address
- *  - contact info  
- *  - Copyright
- */
-const Header = () => {
-  return (
-    <div className="header">
-      <div className='logo'>
-        <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="logo" />
-      </div>
-      <div className='nav-items'>
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-
-const RestaurantCard = (props) => {
-  const { name, avgRating, costForTwo, cloudinaryImageId } = props.restData.info || {} ;
-  return (
-    <div className='restaurant-card'>
-      <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`} alt="logo" />
-      <h3>{name}</h3>
-      <h4>Rating: {avgRating}</h4>
-      <h4>Price: {costForTwo}</h4>
-    </div>
-  );
-}
-
 const restaurantList = {
     "statusCode": 0,
     "data": {
@@ -58,7 +6,7 @@ const restaurantList = {
                 "card": {
                     "card": {
                         "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
-                  
+
                         "id": "restaurant_grid_listing_v2",
                         "gridElements": {
                             "infoWithStyle": {
@@ -824,34 +772,8 @@ const restaurantList = {
                     }
                 }
             }
-          ]
-}
+        ]
+    }
 };
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className='search-bar'></div>
-      <div className='restaurant-container'>
-        {
-          restaurantList.data.cards[0].card.card.gridElements.infoWithStyle.restaurants.map((restaurant) => {
-            return <RestaurantCard restData={restaurant} key={restaurant.info.id} />
-          })
-        }
-      </div>
-    </div>
-  );  
-}
-
-const AppLayoutComponent = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-      <h2>Footer</h2>
-    </div>
-  );
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppLayoutComponent />);
+export default restaurantList;
