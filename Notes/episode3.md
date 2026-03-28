@@ -58,3 +58,11 @@ const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList.data.c
 
 # useEffect HOOK is called as soon as body load.
 - usEffect( callback arrow function, []);
+- whenever second arguments change my useEffect would called
+
+# Routing -
+- React-rouer-dom
+# 2 types of rounting in web apps
+- Client Side Routing
+- Server Side Routing
+
