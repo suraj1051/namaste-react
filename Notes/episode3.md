@@ -52,3 +52,9 @@
 # Read about Reconsilation on below link
 
 https://github.com/acdlite/react-fiber-architecture
+
+# useState 
+const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList.data.cards[0].card.card.gridElements.infoWithStyle.restaurants);
+
+# useEffect HOOK is called as soon as body load.
+- usEffect( callback arrow function, []);
