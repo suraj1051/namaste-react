@@ -66,3 +66,6 @@ const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList.data.c
 - Client Side Routing
 - Server Side Routing
 
+# componentDidMount() used - ClassBasedComponent
+- componentDidMount is used to make api call.
+
