@@ -1,8 +1,9 @@
 import RestaurantCard from "./RestaurantCard";
 import { BASE_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
 
@@ -12,8 +13,7 @@ const Body = () => {
     
     const [searchText, setSearchText] = useState("");
 
-    // Whenever state variable changes, component re-renders and the code inside the component function is executed again.
-    console.log("Body render");
+    const onlineStatus = useOnlineStatus();
 
     useEffect(() => {
         fetchData();
@@ -32,6 +32,10 @@ const Body = () => {
     // Conditional rendering
     if (listOfRestaurants.length === 0) {
         return <Shimmer />;
+    }
+
+    if (onlineStatus === false) {
+        return <h1>Offline, Please check your internet connection!!</h1>
     }
 
     return (

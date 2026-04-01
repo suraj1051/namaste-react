@@ -7,6 +7,16 @@ import About from './components/About';
 import ContactUs from './components/ContactUs';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
+import Shimmer from './components/Shimmer';
+// import Grocery from './components/Grocery';
+
+// App chunking
+// Dynalic Bundling
+// Code splitting is a technique to split the code into smaller chunks 
+// which can be loaded on demand. This helps in reducing the initial load time of the application 
+// and improves the performance.
+
+const Grocery = React.lazy(() => import('./components/Grocery'));
 
 const AppLayoutComponent = () => {
     return (
@@ -42,7 +52,16 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu />
+            },
+            {
+                path: "/grocery",
+                element: (
+                    <React.Suspense fallback={<Shimmer />}>
+                        <Grocery />
+                    </React.Suspense>
+                )
             }
+
         ],
         errorElement: <Error />
     }
