@@ -5,8 +5,6 @@ import React from 'react';
 class About extends React.Component {
     constructor(props) {
         super(props);
-
-        console.log('Parent Constructor');
     }
 
     componentDidMount() {
@@ -14,11 +12,10 @@ class About extends React.Component {
     }
 
     render() {
-        console.log('Parent Render');
         return (
-            <div>
-                <h1>About Us</h1>
-                <p>This is Namaste React Course</p>
+            <div className="m-4 p-4">
+                <h1 className="text-2xl font-bold">About Us</h1>
+                <p className="text-lg">This is Namaste React Course</p>
                 <div className="about-container">
                     <User name="Suraj Gholap" location="Pune, India" />
                 </div>

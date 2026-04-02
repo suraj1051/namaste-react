@@ -23,7 +23,6 @@ const AppLayoutComponent = () => {
         <div className="app">
             <Header />
             <Outlet />
-            <h2>Footer</h2>
         </div>
     );
 }
